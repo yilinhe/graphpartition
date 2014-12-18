@@ -23,5 +23,8 @@ int main(int argc, const char * argv[]) {
     cmd+=outputFile + " ";
     cmd.append(std::to_string(k));
     system(cmd.c_str());
+    cmd = "rm ";
+    cmd.append(outputFile);
+    system(cmd.c_str());
     return 0;
 }
