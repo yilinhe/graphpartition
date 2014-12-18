@@ -14,4 +14,4 @@
 #include <map>
 #include <utility>
 
-void convert_file(std::string);
+void convert_file(std::string,std::string);

@@ -10,9 +10,9 @@
 
 using namespace std;
 
-void convert_file(string filename){
+void convert_file(string inputFile, string outputFile){
     
-    ifstream infile(filename);
+    ifstream infile(inputFile.c_str());
     
     map <int, string> node_list;
     string line;
@@ -53,7 +53,7 @@ void convert_file(string filename){
     
     infile.close();
     ofstream myfile;
-    myfile.open ("/Users/yilinhe/IdeaProjects/research/graph_partition/graph_partition/example.txt");
+    myfile.open(outputFile.c_str());
     myfile << node_list.size() << " "<< num_edges << " 001" "\n";
     for( map<int,string>::iterator ii=node_list.begin(); ii!=node_list.end(); ++ii){
         myfile << (*ii).second << "\n";

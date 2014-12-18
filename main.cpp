@@ -8,14 +8,23 @@
 
 #include <iostream>
 #include <fstream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
 #include "convert_input.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    std::string hw= "hi";
-    hw.append(" ").append("world");
-    std::cout << hw << std::endl;
-    
-    convert_file("/Users/yilinhe/IdeaProjects/research/graph_partition/graph_partition/testdata.txt");
+    std::string inputFile = "example_input.txt";
+    std::string outputFile = "result";
+    int k = 2;
+    std::cout << "input file is: " << inputFile << " output file is: " << outputFile  << std::endl;
+    convert_file(inputFile,outputFile); 
+    std::string cmd = "./kway ";
+    cmd+=outputFile + " ";
+    std::cout << cmd <<std::endl;
+    cmd.append(std::to_string(k));
+    std::cout << cmd <<std::endl;
+    system(cmd.c_str());
     return 0;
 }
